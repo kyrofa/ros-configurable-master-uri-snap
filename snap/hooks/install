@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+# Set the default ROS master URI
+snapctl set ros-master-uri="http://localhost:11311"

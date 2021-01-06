@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+# Validate master URI port
+uri="$(snapctl get ros-master-uri)"
+if ! expr "$uri" : '^.*:[0-9]\+$' > /dev/null; then
+	echo "'$uri' is not a valid ROS master URI" >&2
+	return 1
+fi
